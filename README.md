@@ -24,28 +24,10 @@ JavaScript console should say:
 ```
 Message received: one
 Uncaught Error: boom
-    at SockJS.sockjs.onmessage
-    at SockJS.EventTarget.dispatchEvent (eventtarget.js:51)
-    at main.js:282
-    at Array.forEach (<anonymous>)
-    at SockJS._transportMessage (main.js:280)
-    at XhrStreamingTransport.EventEmitter.emit (emitter.js:50)
-    at Polling.<anonymous> (sender-receiver.js:23)
-    at Polling.EventEmitter.emit (emitter.js:50)
-    at XhrReceiver.<anonymous> (polling.js:30)
-    at XhrReceiver.EventEmitter.emit (emitter.js:50)
+    [stack trace]
 Message received: two
 Uncaught Error: boom
-    at SockJS.sockjs.onmessage ((index):11)
-    at SockJS.EventTarget.dispatchEvent (eventtarget.js:51)
-    at main.js:282
-    at Array.forEach (<anonymous>)
-    at SockJS._transportMessage (main.js:280)
-    at XhrStreamingTransport.EventEmitter.emit (emitter.js:50)
-    at Polling.<anonymous> (sender-receiver.js:23)
-    at Polling.EventEmitter.emit (emitter.js:50)
-    at XhrReceiver.<anonymous> (polling.js:30)
-    at XhrReceiver.EventEmitter.emit (emitter.js:50)
+    [stack trace]
 ```
 
 ## Actual behavior
@@ -55,28 +37,10 @@ JS console says:
 ```
 Message received: one
 Uncaught Error: boom
-    at SockJS.sockjs.onmessage
-    at SockJS.EventTarget.dispatchEvent (eventtarget.js:51)
-    at main.js:282
-    at Array.forEach (<anonymous>)
-    at SockJS._transportMessage (main.js:280)
-    at XhrStreamingTransport.EventEmitter.emit (emitter.js:50)
-    at Polling.<anonymous> (sender-receiver.js:23)
-    at Polling.EventEmitter.emit (emitter.js:50)
-    at XhrReceiver.<anonymous> (polling.js:30)
-    at XhrReceiver.EventEmitter.emit (emitter.js:50)
+    [stack trace]
 Message received: one
 Uncaught Error: boom
-    at SockJS.sockjs.onmessage ((index):11)
-    at SockJS.EventTarget.dispatchEvent (eventtarget.js:51)
-    at main.js:282
-    at Array.forEach (<anonymous>)
-    at SockJS._transportMessage (main.js:280)
-    at XhrStreamingTransport.EventEmitter.emit (emitter.js:50)
-    at Polling.<anonymous> (sender-receiver.js:23)
-    at Polling.EventEmitter.emit (emitter.js:50)
-    at XhrReceiver.<anonymous> (polling.js:30)
-    at XhrReceiver.EventEmitter.emit (emitter.js:50)
+    [stack trace]
 ```
 
 (i.e. `Message received: one` appears twice)
