@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="node_modules/sockjs-client/dist/sockjs.js"></script>
+    <script>
+      const sockjs = new SockJS("/echo", null, {
+        transports: ["xhr-streaming"]
+      });
+      sockjs.onmessage = e => {
+        console.log("Message received:", e.data);
+        throw new Error("boom");
+      };
+      sockjs.onopen = () => {
+        sockjs.send("one");
+        setTimeout(() => {
+          sockjs.send("two");
+        }, 2000);
+      };
+    </script>
+  </head>
+  <body>
+    Hello
+  </body>
+</html>
